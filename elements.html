@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Elements | Sistine &amp; Sage</title>
+    <link rel="stylesheet" href="css/elements.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back">&larr; Command Center</a>
+        <h1>The Elements</h1>
+        <p class="subtitle">Shop &amp; Ingredient Library</p>
+    </header>
+
+    <main class="products">
+        <div class="product-card" onclick="openOverlay('lavender')">
+            <img src="img/amazon-lavender.jpg" alt="Organic Lavender Buds" class="product-img">
+            <h2>Organic Lavender Buds</h2>
+        </div>
+        <div class="product-card" onclick="openOverlay('fire-cider')">
+            <img src="img/amazon-fire-cider.jpg" alt="Fire Cider Kit" class="product-img">
+            <h2>Fire Cider Starter Kit</h2>
+        </div>
+        <div class="product-card" onclick="openOverlay('rose-water')">
+            <img src="img/amazon-rose-water-mist.jpg" alt="Rose Water Mist" class="product-img">
+            <h2>Premium Rose Water</h2>
+        </div>
+    </main>
+
+    <!-- Overlays -->
+    <div class="overlay" id="overlay-lavender">
+        <div class="overlay-content">
+            <button class="overlay-close" onclick="closeOverlay('lavender')">&times;</button>
+            <img src="img/amazon-lavender.jpg" alt="Organic Lavender Buds" class="overlay-img">
+            <h2>Organic Lavender Buds</h2>
+            <p>Dried, aromatic lavender flowers perfect for sachets, teas, and ritual work. Sourced organically for purity and potency.</p>
+            <a href="https://www.amazon.com/Cedar-Space-Lavender-Organic-Flowers/dp/B07XBPQYZZ" class="buy-btn" target="_blank" rel="noopener">Buy Now on Amazon</a>
+            <p class="disclosure">As an Amazon Associate, Sistine &amp; Sage earns from qualifying purchases.</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay-fire-cider">
+        <div class="overlay-content">
+            <button class="overlay-close" onclick="closeOverlay('fire-cider')">&times;</button>
+            <img src="img/amazon-fire-cider.jpg" alt="Fire Cider Kit" class="overlay-img">
+            <h2>Fire Cider Starter Kit</h2>
+            <p>Everything you need to brew a warming, immune-boosting fire cider at home. A folk remedy staple for the colder months.</p>
+            <a href="https://www.amazon.com/Cedar-Space-Lavender-Organic-Flowers/dp/B07XBPQYZZ" class="buy-btn" target="_blank" rel="noopener">Buy Now on Amazon</a>
+            <p class="disclosure">As an Amazon Associate, Sistine &amp; Sage earns from qualifying purchases.</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay-rose-water">
+        <div class="overlay-content">
+            <button class="overlay-close" onclick="closeOverlay('rose-water')">&times;</button>
+            <img src="img/amazon-rose-water-mist.jpg" alt="Rose Water" class="overlay-img">
+            <h2>Premium Rose Water</h2>
+            <p>Natural, hydrating rose water for facial mists and daily skincare rituals. A timeless ingredient from the apothecary shelf.</p>
+            <a href="https://www.amazon.com/Naturevibe-Botanicals-Premium-Natural-Hydrating/dp/B0C5DTHG1B" class="buy-btn" target="_blank" rel="noopener">Buy Now on Amazon</a>
+            <p class="disclosure">As an Amazon Associate, Sistine &amp; Sage earns from qualifying purchases.</p>
+        </div>
+    </div>
+
+    <footer>Sistine &amp; Sage | Powered by Loyal9 LLC</footer>
+
+    <script>
+        function openOverlay(id) {
+            document.getElementById('overlay-' + id).classList.add('active');
+        }
+        function closeOverlay(id) {
+            document.getElementById('overlay-' + id).classList.remove('active');
+        }
+        document.querySelectorAll('.overlay').forEach(el => {
+            el.addEventListener('click', e => {
+                if (e.target === el) el.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -6,28 +6,39 @@
 
 body {
     font-family: 'Georgia', serif;
-    background: #faf8f0;
+    background: #fdfcf9;
     color: #2c2c2c;
-    line-height: 1.6;
+    line-height: 1.7;
     padding: 2rem;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 header {
     text-align: center;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid #8b6914;
-    padding-bottom: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.back {
+    display: inline-block;
+    text-decoration: none;
+    color: #8b7d6b;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.back:hover {
+    color: #4a3728;
 }
 
 h1 {
     font-size: 2rem;
-    color: #5c3d0e;
+    color: #3a3a3a;
+    letter-spacing: 0.08em;
 }
 
 .subtitle {
-    color: #7a6a4f;
+    color: #8b7d6b;
     font-style: italic;
 }
 
@@ -38,15 +49,15 @@ h1 {
     gap: 1.5rem;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: #f0ead6;
+    background: #f7f5f0;
     border-radius: 8px;
-    border: 1px solid #d4c9a8;
+    border: 1px solid #e0d8c8;
     align-items: flex-start;
 }
 
 .filter-group {
     flex: 1;
-    min-width: 220px;
+    min-width: 200px;
     position: relative;
 }
 
@@ -54,8 +65,8 @@ h1 {
     display: block;
     font-weight: bold;
     margin-bottom: 0.4rem;
-    color: #5c3d0e;
-    font-size: 0.9rem;
+    color: #4a3728;
+    font-size: 0.85rem;
 }
 
 .dropdown-filter {
@@ -65,10 +76,16 @@ h1 {
 .dropdown-filter input {
     width: 100%;
     padding: 0.5rem 0.75rem;
-    border: 1px solid #b8a88a;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    border: 1px solid #e0d8c8;
+    border-radius: 5px;
+    font-size: 0.88rem;
+    font-family: 'Georgia', serif;
     background: #fff;
+}
+
+.dropdown-filter input:focus {
+    outline: none;
+    border-color: #8b7d6b;
 }
 
 .dropdown-list {
@@ -80,11 +97,11 @@ h1 {
     max-height: 250px;
     overflow-y: auto;
     background: #fff;
-    border: 1px solid #b8a88a;
+    border: 1px solid #e0d8c8;
     border-top: none;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 5px 5px;
     z-index: 100;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .dropdown-list.open {
@@ -100,7 +117,7 @@ h1 {
 }
 
 .dropdown-item:hover {
-    background: #f0ead6;
+    background: #f7f5f0;
 }
 
 .dropdown-item input[type="checkbox"] {
@@ -123,7 +140,7 @@ h1 {
 .tag {
     display: inline-flex;
     align-items: center;
-    background: #8b6914;
+    background: #4a3728;
     color: #fff;
     padding: 0.2rem 0.5rem;
     border-radius: 3px;
@@ -143,12 +160,14 @@ h1 {
 #clear-filters {
     align-self: flex-end;
     padding: 0.5rem 1rem;
-    background: #5c3d0e;
+    background: #4a3728;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 0.85rem;
+    font-family: 'Georgia', serif;
+    transition: background 0.2s;
 }
 
 #clear-filters:hover {
@@ -162,31 +181,32 @@ h1 {
 
 #result-count {
     font-style: italic;
-    color: #7a6a4f;
+    color: #8b7d6b;
     margin-bottom: 1rem;
 }
 
 .recipe-card {
     background: #fff;
-    border: 1px solid #d4c9a8;
-    border-radius: 6px;
-    padding: 1.2rem;
+    border: 1px solid #e0d8c8;
+    border-radius: 8px;
+    padding: 1.5rem;
     margin-bottom: 1rem;
-    transition: box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .recipe-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .recipe-card h3 {
-    color: #5c3d0e;
+    color: #4a3728;
     margin-bottom: 0.3rem;
 }
 
 .recipe-card .category {
     font-size: 0.8rem;
-    color: #8b6914;
+    color: #8b7d6b;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -197,24 +217,25 @@ h1 {
 
 .recipe-card .ailment-badge {
     display: inline-block;
-    background: #e8dfc7;
-    color: #5c3d0e;
+    background: #f7f5f0;
+    color: #4a3728;
     padding: 0.15rem 0.5rem;
     border-radius: 3px;
     font-size: 0.75rem;
     margin-right: 0.3rem;
     margin-top: 0.2rem;
+    border: 1px solid #e0d8c8;
 }
 
 .recipe-card .ingredients-list {
     margin-top: 0.8rem;
     padding-top: 0.8rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e0d8c8;
 }
 
 .recipe-card .ingredients-list h4 {
     font-size: 0.85rem;
-    color: #7a6a4f;
+    color: #8b7d6b;
     margin-bottom: 0.4rem;
 }
 
@@ -227,8 +248,8 @@ h1 {
 .recipe-card .ingredients-list th {
     text-align: left;
     padding: 0.2rem 0.5rem;
-    border-bottom: 1px solid #d4c9a8;
-    color: #5c3d0e;
+    border-bottom: 1px solid #e0d8c8;
+    color: #4a3728;
 }
 
 .recipe-card .ingredients-list td {
@@ -238,39 +259,64 @@ h1 {
 .recipe-card .recipe-instructions {
     margin-top: 0.8rem;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .recipe-card .recipe-notes {
     margin-top: 0.4rem;
     font-size: 0.85rem;
-    color: #5c3d0e;
+    color: #4a3728;
 }
 
 .recipe-card .recipe-source {
     margin-top: 0.8rem;
     padding-top: 0.6rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e0d8c8;
     font-size: 0.78rem;
-    color: #7a6a4f;
+    color: #8b7d6b;
 }
 
 .recipe-card .source-link {
     display: inline-block;
     margin-top: 0.4rem;
     font-size: 0.8rem;
-    color: #8b6914;
+    color: #8b7d6b;
+    text-decoration: none;
+}
+
+.recipe-card .source-link:hover {
+    color: #4a3728;
 }
 
 footer {
     margin-top: 3rem;
     text-align: center;
-    color: #7a6a4f;
-    font-size: 0.85rem;
-    border-top: 1px solid #d4c9a8;
+    font-size: 0.8rem;
+    color: #a89f91;
+    border-top: 1px solid #e0d8c8;
     padding-top: 1rem;
 }
 
+.footer-credit {
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+}
+
 footer a {
-    color: #8b6914;
+    color: #8b7d6b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #4a3728;
+}
+
+@media (max-width: 600px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
 }
