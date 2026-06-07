@@ -169,7 +169,20 @@ footer {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
     .products {
         grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .overlay-content {
+        padding: 1.5rem;
+        margin: 1rem;
     }
 }
